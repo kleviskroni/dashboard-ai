@@ -127,3 +127,12 @@ export default function Home() {
     </div>
   );
 }
+
+function Card({ title, description, link }: { title: string, description: string, link: string }) {
+  return (
+    <a href={link} className="block p-6 rounded-lg bg-gray-800 hover:bg-gray-700 transition duration-200 border border-gray-700 shadow-lg">
+      <h2 className="text-2xl font-semibold mb-2">{title}</h2>
+      <p className="text-gray-300">{description}</p>
+    </a>
+  );
+}
