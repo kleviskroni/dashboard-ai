@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Image from "next/image";
+import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   return (
@@ -12,18 +14,41 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
+        <h1 className="text-3xl font-bold mb-6">Dashboard AI</h1>
+        <ul className="space-y-4">
+          <li>
+            <Link
+              href="/chatbot"
+              className="text-blue-600 underline"
+            >
+              🤖 Chatbot
+            </Link>
           </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+          <li>
+            <Link
+              href="/upload"
+              className="text-blue-600 underline"
+            >
+              📁 PDF + RAG
+            </Link>
           </li>
-        </ol>
+          <li>
+            <Link
+              href="/analytics"
+              className="text-blue-600 underline"
+            >
+              📊 Analytics
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/login"
+              className="text-blue-600 underline"
+            >
+              🔐 Login
+            </Link>
+          </li>
+        </ul>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
@@ -98,6 +123,7 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
+      <Chatbot />
     </div>
   );
 }
